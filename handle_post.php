@@ -49,26 +49,3 @@ function alert($text, $location){
     echo "<script>location.href='$location'</script>";
 }
 ?>
-
-<?php
-    // if($_FILES['post-file']['error'] === UPLOAD_ERR_OK){
-    //     $fileName = $_FILES['post-file']['name'];
-    //     $extName = strrchr($fileName, ".");
-    //     $name = str_replace($extName, "", $fileName);
-    //     move_uploaded_file($_FILES['post-file']['tmp_name'],'tmp/postfile/'.$name.$id.$extName);
-    //     $fileUrl = 'tmp/postfile/'.$name.$id.$extName;
-    // }
-    // require_once('config.php');
-    // $sql = "INSERT INTO `posts` (`postId`, `title`, `content`, `date`, `file`, `userId`) VALUES ('$id','$title','$content', DEFAULT, '$fileUrl', '$userId')";
-    // $result=mysqli_query($link,$sql);
-    // try {
-    //     if ($result) {
-    //         header('Location: home.php');
-    //     }
-    // }
-    // catch (Exception $e) {
-    //     echo 'Caught exception: ', $e->getMessage(), '<br>';
-    //     echo 'Check credentials in config file at: ', $Mysql_config_location, '\n';
-    // }
-    // mysqli_close($link);
-?>

@@ -26,3 +26,10 @@
     mysqli_stmt_close($stmt);
     mysqli_close($link);
 ?>
+
+<?php
+function alert($text, $location){
+    echo "<script>alert('$text')</script>";
+    echo "<script>location.href='$location'</script>";
+}
+?>
