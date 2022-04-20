@@ -1,0 +1,17 @@
+.inner-page {
+    height: 100vh;
+    background: linear-gradient(-5deg, white 0%, white 30%, var(--bs-primary) 30%,  var(--bs-primary) 100%);
+    background-attachment: fixed;
+}
+xmp {
+    display: block;
+    font-family: var(--bs-body-font-family);;
+}
+
+.post{
+    &__summary{
+        img{
+            max-width: 75%;
+        }
+    }
+}
