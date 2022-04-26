@@ -20,7 +20,7 @@
                         <p class="m-0"><?= $data -> month; ?>　<?= $data -> date; ?>, <?= $data -> year; ?></p>
                         <div class="d-flex align-items-center" >
                             <div class="profile rounded-circle" style="background: url('<?= $data -> profile; ?>') no-repeat center /cover;"></div>
-                            <p class="mb-0 ms-2"><?= $data -> username; ?></p>
+                            <p class="mb-0 ms-2"><?= htmlspecialchars($data -> username); ?></p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-4">

@@ -38,7 +38,7 @@
                                 
                                 <div class="d-flex align-items-center" >
                                     <div class="profile rounded-circle" style="background: url('<?= $item -> profile; ?>') no-repeat center /cover;"></div>
-                                    <p class="mb-0 ms-2"><?= $item -> username; ?><span>,　<?= $item -> year; ?></span></p>
+                                    <p class="mb-0 ms-2"><?= htmlspecialchars($item -> username); ?><span>,　<?= $item -> year; ?></span></p>
                                 </div>
                             </div>
                             <div class="post__summary mb-3">
@@ -131,6 +131,7 @@ function strToBBcode($str){
 
 function createFileLink($id, $fileName){
     if($fileName){
+        $filename = htmlspecialchars($fileName);
         echo "<a class='btn btn-light border border-1' href='handle_download.php?id=$id'><i class='fa-solid fa-file-arrow-down me-2'></i>$fileName</a>";
     }
 }
