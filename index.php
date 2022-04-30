@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-7 text-dark d-flex flex-column justify-content-center align-items-center">
         <i class="fa-solid fa-seedling text-secondary mb-5" style="font-size: 250px"></i>
-        <p class='fs-1 fw-bolder'><?= $title ?></p>
+        <p class='fs-1 fw-bolder'><?= htmlspecialchars($title) ?></p>
     </div>
     <div class="col-5 p-5 vh-100 d-flex flex-column justify-content-center">
         <h2 class="fw-bold mb-5">登入</h2>

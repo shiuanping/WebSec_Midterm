@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if(!strpos($_SERVER['HTTP_REFERER'], $_SERVER['SERVER_NAME'])){
+        die('請求無效');
+    }
     if( !isset($_POST['email']) || !isset($_POST['password']) || $_POST['email']=="" || $_POST['password']=="" ){
         header("Location: index.php");
     }
@@ -14,7 +17,7 @@
         $result = $stmt->get_result();
         while ($row = $result->fetch_assoc()) {
             if($row){
-                $_SESSION[userId] = $row[userId];
+                $_SESSION['userId'] = $row[userId];
                 header('Location: home.php');
             }
         }

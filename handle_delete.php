@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!strpos($_SERVER['HTTP_REFERER'], $_SERVER['SERVER_NAME'])){
+    die('請求無效');
+}
 if(!isset($_SESSION['userId'])) header("Location: index.php");
 $userId = $_SESSION['userId'];
 $valid = false;

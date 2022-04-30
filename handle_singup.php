@@ -1,4 +1,10 @@
 <?php
+
+    if(!strpos($_SERVER['HTTP_REFERER'], $_SERVER['SERVER_NAME'])){
+        die('請求無效');
+    }else{
+        die('ok');
+    }
     
     if( !isset($_POST['username']) || !isset($_POST['password']) || $_POST['username']=="" || $_POST['password']=="" ){
         header("Location: index.php");

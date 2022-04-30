@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+    session_start();
     if(!isset($_SESSION['userId'])) header("Location: index.php");
 ?>
 <!DOCTYPE html>
@@ -110,7 +111,7 @@ function strToBBcode($str){
         '/\[b\](.*?)\[\/b\]/',
         '/\[i\](.*?)\[\/i\]/',
         '/\[u\](.*?)\[\/u\]/',
-        '/\[img\](.*?)\[\/img\]/',
+        '/\[img\](.*?)\?(.*?)\[\/img\]/',
         '/\[color\=(.*?)\](.*?)\[\/color\]/'
     );
 
@@ -124,6 +125,7 @@ function strToBBcode($str){
 
     for ($i =0;$i<count($format_search);$i++) {
         $str =  preg_replace($format_search[$i], $format_replace[$i], $str);
+        $str =  str_replace(array(";"), '', $str);
     }
     $str = str_replace('\r\n', '<br>', $str);
     echo $str;

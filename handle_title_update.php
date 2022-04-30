@@ -1,7 +1,9 @@
 <?php
 session_start();
 if(!isset($_SESSION['admin'])) header("Location: manage_login.php");
-
+    if(!strpos($_SERVER['HTTP_REFERER'], $_SERVER['SERVER_NAME'])){
+        die('請求無效');
+    }
     require_once('config.php');
     $title = mysqli_real_escape_string($link, $_POST['title']);
     if($stmt = $link->prepare("UPDATE `web` SET `title`=? WHERE 1")){

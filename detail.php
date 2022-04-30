@@ -120,6 +120,7 @@ function strToBBcode($str){
 
     for ($i =0;$i<count($format_search);$i++) {
         $str =  preg_replace($format_search[$i], $format_replace[$i], $str);
+        $str =  str_replace(array(";"), '', $str);
     }
     $str = str_replace('\r\n', '<br>', $str);
     echo $str;

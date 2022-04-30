@@ -1,6 +1,9 @@
 <?php
     session_start();
     if(!isset($_SESSION['userId'])) header("Location: index.php");
+    if(!strpos($_SERVER['HTTP_REFERER'], $_SERVER['SERVER_NAME'])){
+        die('請求無效');
+    }
     $id = 'P'.md5(uniqid()); 
     $title = $_POST['title'];
     $content = $_POST['message'];
